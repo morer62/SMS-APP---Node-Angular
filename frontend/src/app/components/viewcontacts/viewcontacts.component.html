@@ -1,0 +1,37 @@
+<br><br><br>
+
+<div class="container">
+    <p class="h2 d-flex justify-content-center">Your Contacts</p><br>
+<div class="row">
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Information</th>
+        <th scope="col"> Delete</th>
+        <th scope="col">Request Course information</th>
+        <th scope="col">Testing Call</th>
+      </tr>
+    </thead>
+    <tbody> 
+      <tr *ngFor="let contact of arrayMember">
+        <th scope="row">{{contact.idcontacts}}</th>
+        <td>{{contact.name}}</td>
+        <td>
+            Email: {{contact.email}}<br>
+            Phone: {{contact.phone}}<br> 
+        </td>
+        <td>  
+            <!--<i class="fas fa-edit" style="color:rgb(255, 153, 0); font-size:25px"></i>&nbsp;&nbsp;|&nbsp;&nbsp;-->
+            <i (click)="deleteContact(contact.idcontacts)" class="fas fa-trash" style="color:rgb(248, 100, 100); font-size:25px"></i>&nbsp;&nbsp;
+        </td>
+        <td><a href="/sms/{{contact.idcontacts}}"><button class="btn btn-success btn-send"> <i class="fas fa-comments"></i></button></a></td>
+        <td><a href="/phone-call/{{contact.idcontacts}}"><button class="btn btn-success btn-send"> <i class="fas fa-phone"></i></button></a></td>
+      </tr>
+       
+    </tbody>
+  </table>
+
+  </div></div>
